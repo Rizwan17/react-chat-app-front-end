@@ -1,38 +1,222 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app-header{
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 150px;
+  align-items: center;
+}
+.app-header img{
+  height: 50px;
+}
+.app-header > .app-name{
+  font-size: 30px;
+  margin: 0 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.chat-system{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.chat-box{
+  width: 350px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 2px 0px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.username-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 20px;
+}
+.username-label{
+  padding: 0;
+  margin: 10px 0;
+}
+.input{
+  border-radius: 5px;
+  border: 1px solid #eee;
+  outline: none;
+  width: 200px;
+  height: 25px;
+  font-size: 14px;
+  box-sizing: border-box;
+  padding: 10px;
+  color: #777;
+  background: #eee;
+}
+
+
+.online-users-header{
+  width: 100%;
+  height: 30px;
+  background: #028aff;
+  color: #fff;
+  font-weight: 500;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.users-list{
+  list-style: none;
+  padding: 0px;
+  margin: 0;
+  max-height: 300px;
+}
+
+.users-list li{
+  padding: 5px 10px;
+  background: #eee;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.users-list li .joined-date{
+  font-size: 10px;
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.users-list li:hover{
+  background: rgb(177, 176, 176);
+}
+
+.message-area{
+  height: 250px;
+}
+
+.message-control{
+  display: flex;
+}
+.message-control textarea{
+  width: 80%;
+  border: none;
+  background: #eee;
+  resize: none;
+  outline: none;
+  font-family: 'KoHo', sans-serif;
+  box-sizing: border-box;
+  padding: 5px;
+  display: inline-block;
+}
+.message-control button{
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+  outline: none;
+  border: none;
+  font-family: 'KoHo', sans-serif;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  cursor: pointer;
+  background: #028aff;
+  color: #fff;
+}
+
+.new-message-count{
+  font-size: 10px;
+  display: inline-block;
+  background: #028aff;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  text-align: center;
+  color: #fff;
+}
+
+.message-area ul{
+  padding: 0;
+  margin: 0;
+  height: 250px;
+  overflow-y: scroll;
+}
+.message-area ul li{
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin: 10px;
+}
+.message-area ul .user-pic{
+  width: 30px;
+  height: 30px;
+  background: #eee;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.message-area ul .user-pic img{
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.message-area ul .message-text{
+  background: #028aff;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 13px;
+  padding: 2px 5px;
+  box-sizing: border-box;
+  margin: 0 5px;
+  max-width: 270px;
+}
+
+.file-input-container{
+  position: relative;
+}
+.file-input-container input[type="file"]{
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+.file-input-container label{
+  display: block;
+  color: #028aff;
+  padding: 0 10px;
+  cursor: pointer;
+  background: #eee;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.image-container{
+  background: #eee;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  margin: 0 5px;
+}
+
+.attachement-display{
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 5px 10px;
+  background: #eee;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.attachment-name{
+  font-weight: 600;
+  font-size: 14px;
+  display: inline-block;
+  margin: 0 5px;
+}
+.remove-attachment{
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0 5px;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.4);
 }
